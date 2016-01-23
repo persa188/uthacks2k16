@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 /*
@@ -25,6 +25,9 @@ Route::get('/', function () {
 | kernel and includes session state, CSRF protection, and more.
 |
 */
+Route::login('/login', function (){
+	return view('login');
+});
 
 Route::group(['middleware' => ['web']], function () {
     //
