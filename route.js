@@ -19,10 +19,11 @@ app.get('/helloworld', function (req, res) {
 });
 
 app.get('/login', function(req, res) {
-	if(db.get('login', {"user":req.param('uname')}) != []){
-		res.send(db.get('login', {"user": req.param('uname')}) == []);
+	if(db.get('login', {"user":req.param('uname')}).length > 0 &&
+		db.get('login', {"pass":req.param("pass")}).length > 0){
+		res.send(db.get('login', {"user": req.param('uname')}).length > 0);
 	}else{
-		res.redirect('http://google.com');
+		res.redirect('/login.html');
 	}
 })
 
