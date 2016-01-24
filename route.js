@@ -15,6 +15,7 @@ var wol = require('wake_on_lan');
 //Routes
 app.post('/login', function(req, res) {
 	res.redirect("/helloworld");
+});
 
 app.get('/', function (req, res) {
 	res.send('Hello World!');
