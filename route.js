@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/helloworld', function (req, res) {
-	res.send('SURPRISE MOTHERTFUCKER');
+	res.send(req);
 });
 
 app.post('/login', function(req, res) {
