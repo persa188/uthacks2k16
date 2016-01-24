@@ -1,3 +1,4 @@
+var exports = module.exports = {};
 var TAFFY = require('node-taffydb').TAFFY;
 
 if (typeof localStorage === "undefined" || localStorage === null) {
@@ -6,24 +7,24 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 }
 
 //localStorage = new LocalStorage('./scratch');
-function makedb(name, data){
+exports.makedb = function(name, data){
     var db = TAFFY(data);
     db.store(name);
     //console.log(db().get());
 }
 
-function insert(dbname, item){
+exports.insert = function(dbname, item){
     db = TAFFY(localStorage.getItem("taffy_"+dbname));
     db.insert(item, false);
     db.store("p");
 }
 
-function get_items(dbname){
+exports.get_items = function(dbname){
     db = TAFFY(localStorage.getItem("taffy_"+dbname));
     return db().get();
 }
 
-function get(dbname, param){
+exports.get = function(dbname, param){
     db = TAFFY(localStorage.getItem("taffy_"+dbname));
     return db().filter(param).get();
 }
