@@ -24,9 +24,9 @@ exports.get_items = function(dbname){
     return db().get();
 }
 
-exports.get = function(dbname, param){
+exports.get = function(dbname, params){
     db = TAFFY(localStorage.getItem("taffy_"+dbname));
-    return db(param).get();
+    return db(params).get();
 }
 
 //makedb("ninthdb", {record:1,text:"example"});
