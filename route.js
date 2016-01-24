@@ -28,7 +28,7 @@ app.get('/helloworld', function (req, res) {
 app.get('/login', function(req, res) {
 	if(db.get('login', {"user":req.param('uname')}).length > 0 &&
 		db.get('login', {"pass":req.param("pass")}).length > 0){
-		res.redirect('/index.html');
+		res.render('index', {username: req.param('uname')});
 	}else{
 		res.redirect('/login.html');
 	}
