@@ -2,21 +2,28 @@
 var express = require('express');
 var app = express();
 
+//for circular form fix
+const util = require('util');
+
 //DB Init
 var db = require("./db_interface.js");
 
 
-//Routes
+//Routes"
 app.get('/', function (req, res) {
 	res.send('Hello World!');
 });
 
 app.get('/helloworld', function (req, res) {
-	res.send(req);
+	res.send("handled login proper");
 });
 
-app.post('/login', function(req, res) {
-	res.redirect("/helloworld");
+app.get('/login', function(req, res) {
+	if(db.get('login', {"user":req.param('uname')}) != []){
+		res.send(db.get('login', {"user": req.param('uname')}) == []);
+	}else{
+		res.redirect('http://google.com');
+	}
 })
 
 app.use(express.static('public'));
