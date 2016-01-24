@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ninth Balcony</title>
+		<link href="style.css" rel="stylesheet">
+<!-- 		// <script type="text/javascript" src="js.js"></script> -->
+	</head>
+
+	<body>
+		<header id="header">
+			<h1>
+				<script language="javascript">
+				datetoday = new Date();
+				timenow=datetoday.getTime();
+				datetoday.setTime(timenow);
+				thehour = datetoday.getHours();
+				if (thehour > 18) display = "Evening";
+				else if (thehour >12) display = "Afternoon";
+				else display = "Morning";
+				var greeting = ("Good " + display + "!");
+				document.write(greeting);
+				</script>
+			#UserName</h1>
+		</header>
+
+		<table>
+			<tr>
+				<td><a href="/lights">Remote Lightswitches</a></td>
+			</tr>  
+			<tr>
+				<td><a href="/thermostat">Thermostat</a></td>
+			</tr>  
+			<tr>
+				<td><a href="/frige">Refrigerator</a></td>
+			</tr>  
+			<tr>
+				<td><a href="/stove">Stove</a></td>
+			</tr>  
+			<tr>
+				<td><a href="/garage">Garage</a></td>
+			</tr> 
+			<tr>
+				<td><a href="/devices">Console Devices</a></td>
+			</tr> 
+			<tr>
+				<td><a href="/internet">Internet</a></td>
+			</tr> 
+			<tr>
+				<td><a href="/security">Home Security</a></td>
+			</tr>  
+			<tr>
+				<td><a href="/exterior">Home Exterior</a></td>
+			</tr> 
+			<tr>
+				<td><a href="/dishwasher">Dishwasher</a></td>
+			</tr> 
+		</table>
+
+		<footer>
+			<button type="button" onclick="alert('Add an Application')">
+			+
+			</button>
+			<button type="button" onclick="alert('Delete an Application')">
+			x
+			</button>
+		</footer>
+			
+	</body>
+
+</html>
