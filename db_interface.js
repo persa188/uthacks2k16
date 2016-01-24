@@ -16,7 +16,7 @@ exports.makedb = function(name, data){
 exports.insert = function(dbname, item){
     db = TAFFY(localStorage.getItem("taffy_"+dbname));
     db.insert(item, false);
-    db.store("p");
+    db.store(dbname);
 }
 
 exports.get_items = function(dbname){
@@ -26,7 +26,7 @@ exports.get_items = function(dbname){
 
 exports.get = function(dbname, param){
     db = TAFFY(localStorage.getItem("taffy_"+dbname));
-    return db().filter(param).get();
+    return db(param).get();
 }
 
 //makedb("ninthdb", {record:1,text:"example"});
